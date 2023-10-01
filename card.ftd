@@ -1,0 +1,281 @@
+-- boolean $show1: false
+-- boolean $show2: false
+-- boolean $show3: false
+-- boolean $show4: false
+-- boolean $show5: false
+-- boolean $show: false
+-- boolean $clicked: false
+-- string $x: 0
+
+
+-- component rate-card:
+caption heading:
+body desc:
+string thanks-heading:
+string thanks-desc:
+
+-- ftd.column:
+width.fixed.px: 300
+height.fixed.px: 300
+overflow: hidden
+padding.px: 25
+border-radius.px: 25
+background.solid: #1B222C
+
+
+-- ftd.row:
+background.solid: #252d37
+border-radius.px: 25
+padding.px: 10
+align-content: center
+if: {clicked == false}
+
+-- ftd.image: $assets.files.assets.images.icon-star.svg
+height.fixed.px: 12
+
+-- end: ftd.row
+
+-- ftd.text: $rate-card.heading
+role: $heading-type
+color: white
+padding-top.px: 25
+if: {clicked == false}
+
+-- ftd.text: $rate-card.desc
+role: $desc-type
+color: #7c8798
+padding-top.px: 10
+if: {clicked == false}
+
+
+
+-- ftd.row:
+spacing: space-between 
+padding-top.px: 20
+padding-bottom.px: 20
+width: fill-container
+if: {clicked == false}
+
+
+
+-- ftd.row:
+background.solid if { show1 }: #959eac
+background.solid if { x == 1 }: #fb7413
+background.solid: #252d37
+border-radius.px: 200
+padding.px: 9
+padding-left.px: 14
+padding-right.px: 14
+align-content: center
+cursor: pointer
+$on-mouse-enter$: $ftd.set-bool($a = $show1, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $show1, v = false)
+$on-click$: $ftd.set-string($a = $x, v = 1)
+
+-- ftd.text: 1
+color if { x == 1 }: white
+color if { show1 }: white
+color: #7c8798
+role: $number-type
+
+-- end: ftd.row
+
+-- ftd.row:
+background.solid if { show2 }: #959eac
+background.solid if { x == 2 }: #fb7413
+background.solid: #252d37
+border-radius.px: 200
+padding.px: 9
+padding-left.px: 14
+padding-right.px: 14
+align-content: center
+cursor: pointer
+$on-mouse-enter$: $ftd.set-bool($a = $show2, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $show2, v = false)
+$on-click$: $ftd.set-string($a = $x, v = 2)
+
+-- ftd.text: 2
+color if { x == 2 }: white
+color if { show2 }: white
+color: #7c8798
+role: $number-type
+
+-- end: ftd.row
+
+
+-- ftd.row:
+background.solid if { show3 }: #959eac
+background.solid if { x == 3 }: #fb7413
+background.solid: #252d37
+border-radius.px: 200
+padding.px: 9
+padding-left.px: 14
+padding-right.px: 14
+align-content: center
+cursor: pointer
+$on-mouse-enter$: $ftd.set-bool($a = $show3, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $show3, v = false)
+$on-click$: $ftd.set-string($a = $x, v = 3)
+
+-- ftd.text: 3
+color if { x == 3 }: white
+color if { show3 }: white
+color: #7c8798
+role: $number-type
+
+-- end: ftd.row
+
+
+-- ftd.row:
+background.solid if { show4 }: #959eac
+background.solid if { x == 4 }: #fb7413
+background.solid: #252d37
+border-radius.px: 200
+padding.px: 9
+padding-left.px: 14
+padding-right.px: 14
+align-content: center
+cursor: pointer
+$on-mouse-enter$: $ftd.set-bool($a = $show4, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $show4, v = false)
+$on-click$: $ftd.set-string($a = $x, v = 4)
+
+-- ftd.text: 4
+color if { show4 }: white
+color if { x == 4 }: white
+color: #7c8798
+role: $number-type
+
+-- end: ftd.row
+
+
+-- ftd.row:
+background.solid if { show5 }: #959eac
+background.solid if { x == 5 }: #fb7413
+background.solid: #252d37
+border-radius.px: 200
+padding.px: 9
+padding-left.px: 14
+padding-right.px: 14
+align-content: center
+cursor: pointer
+$on-mouse-enter$: $ftd.set-bool($a = $show5, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $show5, v = false)
+$on-click$: $ftd.set-string($a = $x, v = 5)
+
+-- ftd.text: 5
+color if { show5 }: white
+color if { x == 5 }: white
+color: #7c8798
+role: $number-type
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+
+-- ftd.container:
+cursor: pointer
+border-radius.px: 20
+padding.px: 8
+background.solid if { show }: white
+background.solid: #fb7413
+width: fill-container
+$on-mouse-enter$: $ftd.set-bool($a = $show, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $show, v = false)
+$on-click$: $ftd.set-bool($a = $clicked, v = true)
+if: {clicked == false}
+
+
+-- ftd.text: SUBMIT
+role: $button-type
+color if { show }: #fb7413
+color: white
+text-align: center
+
+-- end: ftd.container
+
+-- ftd.row:
+margin-top.px: 20
+width: fill-container
+align-content: center
+if: {clicked}
+
+-- ftd.image: $assets.files.assets.images.illustration-thank-you.svg
+height.fixed.px: 80
+
+-- end: ftd.row
+
+-- ftd.row:
+margin.px: 20
+border-radius.px: 15
+padding.px: 3
+spacing.fixed.px: 2
+align-self: center
+align-content: center
+width.fixed.px: 135
+background.solid: #252d37
+if: {clicked}
+
+-- ftd.text: You selected 
+role: $desc-type
+color: #FC7614
+
+-- ftd.text: $x
+role: $desc-type
+color: #FC7614
+
+-- ftd.text: out of 5
+role: $desc-type
+color: #FC7614
+
+-- end: ftd.row
+
+
+-- ftd.text: $rate-card.thanks-heading
+role: $heading-type
+color: white
+padding-top.px: 5
+if: {clicked }
+width: fill-container
+text-align: center
+
+-- ftd.text: $rate-card.thanks-desc
+role: $desc-type
+color: #7c8798
+width: fill-container
+padding-top.px: 7
+if: {clicked }
+text-align: center
+
+
+-- end: ftd.column
+
+-- end: rate-card
+
+
+
+
+-- ftd.type heading-type:
+font-family: $assets.fonts.Overpass
+size.px: 20
+weight: 700
+
+-- ftd.type desc-type:
+font-family: $assets.fonts.Overpass
+size.px: 11
+line-height.px: 18
+weight: 400
+
+-- ftd.type number-type:
+font-family: $assets.fonts.Overpass
+size.px: 12
+weight: 700
+
+-- ftd.type button-type:
+font-family: $assets.fonts.Overpass
+size.px: 11
+weight: 400
+letter-spacing.px: 2
+
+
