@@ -2,6 +2,19 @@
 
 ![Design preview for the FAQ accordion card coding challenge](./assets/design/desktop-preview.jpg)
 
+
+## Information about the project
+
+It is an Interactive Rating Component.
+
+*Preview of the component provided has been replicated!*
+
+**Features**
+
+- View the optimal layout for the component depending on your device's screen size
+- See hover states for all interactive elements on the page
+- Texts in the component can be modified by the user according to their need
+
 ## Welcome! 👋
 
 Thanks for checking out this fastn coding challenge.
